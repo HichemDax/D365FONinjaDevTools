@@ -9,6 +9,7 @@ An exciting toolset to make of you a Ninja developer in Dynamics 365 For Operati
 ### 3- Create menu items (Forms, Classes and Reports)
 ### 4- Label your controls with ease
 ### 5- Set table column as index
+### 6 -More yet to come...
 #
 # We need your contribution & support!
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](hichemseesharp@gmail.com)
