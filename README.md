@@ -1,6 +1,8 @@
 # D365FO Ninja Dev Tools
 An exciting toolset to make of you a Ninja developer in Dynamics 365 For Operations
 #
+![Picture](https://image-store.slidesharecdn.com/34929004-45eb-46ae-aac2-fc8fd55e50fa-large.png)
+
 # Features:
 ### 1- Add new items to project
 ### 2- Populate mandatory controls to coply with the form pattern
