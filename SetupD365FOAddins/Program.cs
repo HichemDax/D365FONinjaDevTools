@@ -19,6 +19,7 @@ namespace SetupD365FOAddins
                         , true);
 
 
+
                 Console.WriteLine("Setup finished! Close and enjoy!");
                 Console.ReadLine();
             
