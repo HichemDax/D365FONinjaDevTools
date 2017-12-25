@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h" />
+
+  <Extern href="vsshlids.h" />
+
+  <Commands package="guidCommand1Package">
+
+    <Groups>
+      <Group guid="guidCommand1PackageCmdSet" id="MyMenuGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_FOLDERNODE" />
+      </Group>
+
+    
+      <Group guid="guidCommand1PackageCmdSet" id="MyMenuGroup1" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJNODE" />
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidCommand1PackageCmdSet" id="cmdIdAddItemsToFolder" priority="0x0100" type="Button">
+        <Parent guid="guidCommand1PackageCmdSet" id="MyMenuGroup" />
+        <Icon guid="guidImages" id="bmpPic1" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Add new</ButtonText>
+        </Strings>
+      </Button>
+    
+    </Buttons>
+
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\ToolBox.Png" usedList="bmpPic1" />
+      <Bitmap guid="guidImages1" href="AddItemsFromProject\Resources\AddItemsToProject.png" usedList="bmpPic1" />
+    </Bitmaps>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidCommand1Package" value="{a2d23409-8e73-41d4-a25f-c4ba334eb96b}" />
+    
+    <GuidSymbol name="guidCommand1PackageCmdSet" value="{5ed27ab2-7007-4c3d-a535-88720e97b49f}">
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="cmdIdAddItemsToFolder" value="0x0100" />
+      
+      <IDSymbol name="MyMenuGroup1" value="0x1010" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{d7fde224-2a28-4562-9926-a6578a13cf0f}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{bfe7664b-07ac-4c3b-96fa-a13701ea9e44}" name="guidImages1">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
