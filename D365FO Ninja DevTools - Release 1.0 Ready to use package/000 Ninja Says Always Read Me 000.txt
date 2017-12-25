@@ -1,0 +1,30 @@
+SetupD365FOAddins.exe will copy D365FONinjaDevExtensions.dll to VS the default extensions folder: C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\AddinExtensions
+
+Otherwise you can do it manually:
+
+Get the folder path from the value of the key that starts with DynamicsRainierVSTools in registry:
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\VisualStudio\14.0\ExtensionManager\EnabledExtensions
+
+Tools:
+
+1- Add new items
+https://community.dynamics.com/ax/b/dynamicsaxthehardway/archive/2017/11/21/go-faster-using-a-quick-way-to-add-new-elements-to-you-project-using-ninja-dev-add-ins-for-dynamics-365-for-operations
+
+2- Populate form controls
+https://community.dynamics.com/ax/b/dynamicsaxthehardway/archive/2017/12/17/populate-mandatory-controls-using-ninja-dev-addins-for-dynaamics-365-for-operations
+
+Patterns supported in this version:
+	1- SimpleList
+	2- ListPage
+	3- SimpleListDetails
+	4- DetailsMaster
+
+3- Label it
+https://community.dynamics.com/ax/b/dynamicsaxthehardway/archive/2017/12/16/label-you-controls-with-ease-using-ninja-dev-addins-for-dynamics-365-for-operations
+
+4- Create menu item
+Right click a Form, a Class (Designer mode) or SSRS Report > Addins > Create menu item: the tool with create the respective Display, Action or Output menu item
+
+5- Set as index
+Select the desired table column > right click > Addins > set as index, if set as unique, the tool will create findBy<ColumnName>() method
+

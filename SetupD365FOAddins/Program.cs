@@ -18,6 +18,7 @@ namespace SetupD365FOAddins
                         @"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\AddinExtensions\D365FONinjaDevExtensions.dll"
                         , true);
 
+
                 Console.WriteLine("Setup finished! Close and enjoy!");
                 Console.ReadLine();
             
