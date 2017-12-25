@@ -17,7 +17,7 @@ namespace D365FONinjaDevTools.Kernel
 
         public static string Convert(this string name)
         {
-            Project = (ProjectNode)LocalUtils.GetActiveProject();
+            Project = LocalUtils.GetActiveProjectNode();
             ProjectParameters.Contruct();
             MetaModelProviders = ServiceLocator.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
             MetaModelService = MetaModelProviders.CurrentMetaModelService;

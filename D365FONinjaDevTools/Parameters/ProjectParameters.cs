@@ -32,7 +32,7 @@ namespace D365FONinjaDevTools.Parameters
         {
             XmlDocument doc = new XmlDocument();
             var xsSubmit = new XmlSerializer(typeof(ProjectParameters));
-            ParamFilePath = ((ProjectNode) Kernel.LocalUtils.GetActiveProject()).ProjectFolder + @"\NinjaDevAddinsParam.xml";
+            ParamFilePath =  Kernel.LocalUtils.GetActiveProjectNode().ProjectFolder + @"\NinjaDevAddinsParam.xml";
 
             if (File.Exists(ParamFilePath))
             {
