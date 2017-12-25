@@ -12,7 +12,7 @@ An exciting toolset to make of you a Ninja developer in Dynamics 365 For Operati
 ### 6 -More yet to come...
 #
 # We need your contribution & support!
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](hichemseesharp@gmail.com)
+
 
 
 
