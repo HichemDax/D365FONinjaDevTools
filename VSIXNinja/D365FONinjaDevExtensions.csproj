@@ -77,10 +77,9 @@
     <Compile Include="AddMenuItem\LabelItAddIn.cs" />
     <Compile Include="D365FoNinjaDevExtensionsPackage.cs" />
     <Compile Include="AddItemsToFolder\FolderType.cs" />
-    <Compile Include="Kernel\LocalUtils.cs" />
     <Compile Include="Kernel\AddinsUtility.cs" />
     <Compile Include="LabelIt\LabelItAddIn.cs" />
-    <Compile Include="LocalUtils.cs" />
+    <Compile Include="Kernel\LocalUtils.cs" />
     <Compile Include="Parameters\MainMenuAddIn.cs" />
     <Compile Include="Parameters\Parameters.cs">
       <SubType>Form</SubType>
@@ -140,10 +139,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\D3FODevAddins\bin\Debug\Microsoft.Dynamics.AX.Metadata.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Dynamics.AX.Metadata.Core, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\Microsoft.Dynamics.AX.Metadata.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Server.Core, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\NinjaDevAddins\bin\Debug\Microsoft.Dynamics.AX.Server.Core.dll</HintPath>
@@ -151,17 +146,6 @@
     <Reference Include="Microsoft.Dynamics.AX.Xpp.Support, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\Microsoft.Dynamics.AX.Xpp.Support.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Dynamics.Framework.Tools.AutomationObjects">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\Microsoft.Dynamics.Framework.Tools.AutomationObjects.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Dynamics.Framework.Tools.Extensibility, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\Microsoft.Dynamics.Framework.Tools.Extensibility.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Dynamics.Framework.Tools.Integration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\Microsoft.Dynamics.Framework.Tools.Integration.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.LabelEditor">
       <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\Microsoft.Dynamics.Framework.Tools.LabelEditor.dll</HintPath>

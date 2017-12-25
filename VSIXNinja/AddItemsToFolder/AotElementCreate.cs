@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using D365FONinjaDevExtensions.Kernel;
 using Microsoft.Dynamics.AX.Metadata.MetaModel;
 using VSProjectNode = Microsoft.Dynamics.Framework.Tools.ProjectSystem.VSProjectNode;
 using VSProjectFolderNode = Microsoft.Dynamics.Framework.Tools.ProjectSystem.VSProjectFolderNode;

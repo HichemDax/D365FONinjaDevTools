@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using D365FONinjaDevExtensions.Kernel;
 using Dynamics.AX.Application;
 using Microsoft.Dynamics.AX.Metadata.MetaModel;
 

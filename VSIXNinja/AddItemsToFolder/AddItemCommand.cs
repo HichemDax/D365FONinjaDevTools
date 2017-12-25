@@ -6,6 +6,7 @@
 
 using System;
 using System.ComponentModel.Design;
+using D365FONinjaDevExtensions.Kernel;
 using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
 using Microsoft.VisualStudio.Shell;
 using Exception = System.Exception;

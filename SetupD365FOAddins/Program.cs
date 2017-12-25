@@ -28,9 +28,6 @@ namespace SetupD365FOAddins
                 Console.WriteLine("Seems that an issue prevented me from doing my job :(");
                 Console.ReadLine();
 
-
-
-
             }
             
         }
