@@ -1,5 +1,5 @@
 # D365FO Ninja Dev Tools
-An exciting tool set to make of you a Ninja developer in Dynamics 365 For Operations
+An exciting toolset to make of you a Ninja developer in Dynamics 365 For Operations
 #
 # Features:
 ### 1- Add new items to project
