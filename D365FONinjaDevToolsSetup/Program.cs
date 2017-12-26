@@ -10,8 +10,8 @@ namespace D365FONinjaDevToolsSetup
             try
             {
                
-                File.Copy($@"{Environment.CurrentDirectory}\D365FONinjaDevExtensions.dll",
-                        @"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\AddinExtensions\D365FONinjaDevExtensions.dll"
+                File.Copy($@"{Environment.CurrentDirectory}\D365FONinjaDevTools.dll",
+                        @"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\AddinExtensions\D365FONinjaDevTools.dll"
                         , true);
 
 

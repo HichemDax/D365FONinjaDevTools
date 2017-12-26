@@ -254,7 +254,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder
         private static void AddAotElement<TAotElementType>(string formName = "")
         {
             VSProjectFolderNode folderItem;
-            if (formName != null)
+            if (formName.Length != 0)
                 folderItem = Project.CreateFolderNodes(formName) as VSProjectFolderNode;
             
             else

@@ -75,7 +75,7 @@
     <Compile Include="AddItemsToFolder\FileNameDialog.xaml.cs">
       <DependentUpon>FileNameDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddMenuItem\LabelItAddIn.cs" />
+    <Compile Include="AddMenuItem\AddMenuItem.cs" />
     <Compile Include="D365FoNinjaDevExtensionsPackage.cs" />
     <Compile Include="AddItemsToFolder\FolderType.cs" />
     <Compile Include="Kernel\AddinsUtility.cs" />

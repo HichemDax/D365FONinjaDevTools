@@ -1,4 +1,4 @@
-SetupD365FOAddins.exe will copy D365FONinjaDevExtensions.dll to VS the default extensions folder: C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\AddinExtensions
+D365FONinjaDevToolsSetup.exe will copy D365FONinjaDevExtensions.dll to VS the default extensions folder: C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\AddinExtensions
 
 Otherwise you can do it manually:
 
@@ -23,7 +23,7 @@ Patterns supported in this version:
 https://community.dynamics.com/ax/b/dynamicsaxthehardway/archive/2017/12/16/label-you-controls-with-ease-using-ninja-dev-addins-for-dynamics-365-for-operations
 
 4- Create menu item
-Right click a Form, a Class (Designer mode) or SSRS Report > Addins > Create menu item: the tool with create the respective Display, Action or Output menu item
+https://community.dynamics.com/ax/b/dynamicsaxthehardway/archive/2017/12/25/create-menu-items-with-d365fo-ninja-devtools
 
 5- Set as index
 Select the desired table column > right click > Addins > set as index, if set as unique, the tool will create findBy<ColumnName>() method
