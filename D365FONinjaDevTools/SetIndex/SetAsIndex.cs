@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using System.Linq;
+using D365FONinjaDevTools.Kernel;
 using Microsoft.Dynamics.AX.Metadata.Core.MetaModel;
 using Microsoft.Dynamics.AX.Metadata.MetaModel;
 using Microsoft.Dynamics.Framework.Tools.Extensibility;
@@ -60,33 +61,29 @@ namespace D365FONinjaDevTools.SetIndex
                 // Add the method to the class
                 axTable.AddIndex(index);
 
+                var fieldNameCamelCase = field.Name.ToCamelCase();
+                var tableNameCamelCase = axTable.Name.ToCamelCase();
+
                 var source =
-                    $@"public static {axTable.Name} findBy{field.Name} ({field.ExtendedDataType} _{Kernel.LocalUtils
-                        .toCamelCase(field.Name)}, boolean _forUpdate = false)
+                    $@"public static {axTable.Name} findBy{field.Name} ({field.ExtendedDataType} _{fieldNameCamelCase}, boolean _forUpdate = false)
                 {{
-                    {axTable.Name} {Kernel.LocalUtils.toCamelCase(axTable.Name)};
+                    {axTable.Name} {tableNameCamelCase};
 
-                    {Kernel.LocalUtils.toCamelCase(axTable.Name)}.selectForUpdate(_forUpdate);
+                    {tableNameCamelCase}.selectForUpdate(_forUpdate);
 
-                    if(_{Kernel.LocalUtils.toCamelCase(field.Name)})
-                    select firstonly {Kernel.LocalUtils.toCamelCase(axTable.Name)} where {Kernel.LocalUtils.toCamelCase(axTable.Name)}.{field
-                        .Name} == _{Kernel.LocalUtils.toCamelCase(field.Name)};
+                    if(_{fieldNameCamelCase})
+                    select firstonly {tableNameCamelCase} where {tableNameCamelCase}.{field
+                        .Name} == _{fieldNameCamelCase};
 
-                    return {Kernel.LocalUtils.toCamelCase(axTable.Name)};
+                    return {tableNameCamelCase};
                 }}";
 
 
-                // Add the method to the class
                 axTable.AddMethod(BuildMethod(field.Name, source));
-
-                // Prepare objects needed for saving
                 var metaModelProviders = ServiceLocator.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
                 var metaModelService = metaModelProviders.CurrentMetaModelService;
-                // Getting the model will likely have to be more sophisticated, such as getting the model of the project and checking
-                // if the object has the same model.
-                // But this shold do for demonstration.
-                var model =
-                    DesignMetaModelService.Instance.CurrentMetadataProvider.Tables.GetModelInfo(axTable.Name)
+               
+                var model = DesignMetaModelService.Instance.CurrentMetadataProvider.Tables.GetModelInfo(axTable.Name)
                         .FirstOrDefault();
 
                 // Update the file

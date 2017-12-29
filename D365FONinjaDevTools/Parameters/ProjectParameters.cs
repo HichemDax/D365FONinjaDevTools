@@ -26,6 +26,9 @@ namespace D365FONinjaDevTools.Parameters
         [XmlElement("Extension")]
         public string Extension { get; set; }
 
+        [XmlElement("DefaultLabelFileName")]
+        public string DefaultLabelsFileName { get; set; }
+
         public static ProjectParameters Instance => Lazy.Value;
 
         public static void Contruct()

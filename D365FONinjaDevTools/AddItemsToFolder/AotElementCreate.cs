@@ -1,40 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using D365FONinjaDevTools.Kernel;
+using Dynamics.AX.Application;
 using Microsoft.Dynamics.AX.Metadata.MetaModel;
-using VSProjectNode = Microsoft.Dynamics.Framework.Tools.ProjectSystem.VSProjectNode;
+using Exception = System.Exception;
 using VSProjectFolderNode = Microsoft.Dynamics.Framework.Tools.ProjectSystem.VSProjectFolderNode;
-using UtilElementType = Dynamics.AX.Application.UtilElementType;
+using VSProjectNode = Microsoft.Dynamics.Framework.Tools.ProjectSystem.VSProjectNode;
 
 namespace D365FONinjaDevTools.AddItemsToFolder
 {
     public class AotElementCreate
     {
-        static readonly VSProjectNode Project;
+        private static readonly VSProjectNode Project;
         private static readonly ModelSaveInfo Model;
         private static string _name;
 
         static AotElementCreate()
         {
             Project = LocalUtils.GetActiveProjectNode();
-            ModelInfo model = Project.GetProjectsModelInfo();
+
+            if (Project == null)
+                throw new InvalidOperationException("No project selected.");
+
+            var model = Project.GetProjectsModelInfo();
 
             Model = new ModelSaveInfo
             {
                 Id = model.Id,
-                Layer = model.Layer,
+                Layer = model.Layer
             };
         }
 
-
-        public static void Create(UtilElementType type, string name)
+        public static void CreateExtension(string name, dynamic baseElement)
         {
+            _name = name;
+            var myClass =  NAxClass.Construct(name, baseElement);
+            LocalUtils.MetaService.CreateClass(myClass, Model);
+            AddAotElement<AxClass>();
+        }
 
-            if (Project == null)
-            {
-                throw new InvalidOperationException("No project selected.");
-            }
-
+        public static void Create(UtilElementType type, string name, dynamic baseElement = null)
+        {
             _name = name;
             switch (type)
             {
@@ -95,7 +101,6 @@ namespace D365FONinjaDevTools.AddItemsToFolder
                 case UtilElementType.ExtendedType:
 
 
-
                     break;
                 case UtilElementType.Table:
                     var existsTable = LocalUtils.MetaService.GetTableNames().Contains(name);
@@ -112,7 +117,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder
 
                     if (!existsClass)
                     {
-                        var axClass = new AxClass {Name = name};
+                        var axClass = NAxClass.Construct(name);
                         LocalUtils.MetaService.CreateClass(axClass, Model);
                         AddAotElement<AxClass>();
                     }
@@ -188,24 +193,18 @@ namespace D365FONinjaDevTools.AddItemsToFolder
                         var role = new AxSecurityRole {Name = name};
                         LocalUtils.MetaService.CreateSecurityRole(role, Model);
                         AddAotElement<AxSecurityRole>();
-
                     }
                     break;
 
                 default:
                     throw new Exception("Element not supported");
-
             }
-
         }
 
         public static void CreateMenuItem(UtilElementType type, string name, string label = "")
         {
-
             if (Project == null)
-            {
                 throw new InvalidOperationException("No project selected.");
-            }
 
             _name = name;
             switch (type)
@@ -215,7 +214,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder
 
                     if (!existsDisplayTool)
                     {
-                        var displayMenu = new AxMenuItemDisplay { Name = name , Object = name, Label = label };
+                        var displayMenu = new AxMenuItemDisplay {Name = name, Object = name, Label = label};
 
                         LocalUtils.MetaService.CreateMenuItemDisplay(displayMenu, Model);
                         AddAotElement<AxMenuItemDisplay>("Display Menu Items");
@@ -227,7 +226,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder
 
                     if (!existsOutputTool)
                     {
-                        var outputMenu = new AxMenuItemOutput { Name = name, Object = name };
+                        var outputMenu = new AxMenuItemOutput {Name = name, Object = name, Label = name.Convert()};
                         LocalUtils.MetaService.CreateMenuItemOutput(outputMenu, Model);
                         AddAotElement<AxMenuItemOutput>("Output Menu Items");
                     }
@@ -238,7 +237,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder
 
                     if (!existsActionTool)
                     {
-                        var actionMenu = new AxMenuItemAction { Name = name, Object = name };
+                        var actionMenu = new AxMenuItemAction {Name = name, Object = name, Label = name.Convert()};
                         LocalUtils.MetaService.CreateMenuItemAction(actionMenu, Model);
                         AddAotElement<AxMenuItemAction>("Action Menu Items");
                     }
@@ -246,23 +245,29 @@ namespace D365FONinjaDevTools.AddItemsToFolder
 
                 default:
                     throw new Exception("Element not supported");
-
             }
-
         }
 
-        private static void AddAotElement<TAotElementType>(string formName = "")
+        private static void AddAotElement<TAotElementType>(string folderName = "")
         {
-            VSProjectFolderNode folderItem;
-            if (formName.Length != 0)
-                folderItem = Project.CreateFolderNodes(formName) as VSProjectFolderNode;
-            
+            dynamic selectedItem;
+            if (folderName.Length != 0)
+                selectedItem = Project.CreateFolderNodes(folderName) as VSProjectFolderNode;
+
             else
-            folderItem = LocalUtils.MyDte.SelectedItems.Item(1).ProjectItem.Object as VSProjectFolderNode;
-         
-            Project.AddModelElementsToProject(
-                new List<MetadataReference> {new MetadataReference(_name, typeof(TAotElementType))},
-                folderItem.ID, true);
+            {
+                selectedItem = LocalUtils.MyDte.SelectedItems.Item(1).ProjectItem.Object;
+
+                var isFolder = selectedItem is VSProjectFolderNode;
+
+                if (!isFolder)
+                    selectedItem = selectedItem.Parent;
+            }
+
+            if (selectedItem is VSProjectFolderNode)
+                Project.AddModelElementsToProject(
+                    new List<MetadataReference> {new MetadataReference(_name, typeof(TAotElementType))},
+                    selectedItem.ID, true);
         }
     }
 }

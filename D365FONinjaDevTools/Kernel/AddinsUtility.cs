@@ -19,25 +19,27 @@ namespace D365FONinjaDevTools.Kernel
         {
             Project = LocalUtils.GetActiveProjectNode();
             ProjectParameters.Contruct();
+
             MetaModelProviders = ServiceLocator.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
             MetaModelService = MetaModelProviders.CurrentMetaModelService;
 
             var extension = ProjectParameters.Instance.Extension;
+            var defaultLablesFileName = ProjectParameters.Instance.DefaultLabelsFileName;
 
-            var englishLabelFile =
-                MetaModelService.GetLabelFileNames()
-                    .FirstOrDefault(
-                        lableFileName => lableFileName.StartsWith(extension) && lableFileName.Contains("en-US"));
+            if (string.IsNullOrEmpty(defaultLablesFileName))
+                throw new System.Exception(
+                    "Label file name not specified in the Settings. Dynamics 365 > Addins > Ninja DevTools Settings");
 
-            var lableFile = MetaModelService.GetLabelFile(englishLabelFile);
+            var lableFile = MetaModelService.GetLabelFile(defaultLablesFileName);
+            if (lableFile == null)
+                throw new System.Exception("File name not found");
+            
+
             var labelKey = name.Replace(extension, "");
-
             var lableTxt = Regex.Replace(labelKey, "((?<=[a-z])[A-Z]|[A-Z](?=[a-z]))", " $1").Trim().ToLower().UppercaseFirst();
 
             LabelControllerFactory factory = new LabelControllerFactory();
             LabelEditorController labelEditorController = factory.GetOrCreateLabelController(lableFile, LocalUtils.Context);
-            
-            //CoreUtility.DisplayInfo(labelKey);
 
             if (!labelEditorController.Exists(labelKey))
             {

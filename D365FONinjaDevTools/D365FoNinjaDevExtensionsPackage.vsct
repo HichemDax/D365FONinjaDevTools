@@ -15,7 +15,7 @@
 
     
       <Group guid="guidCommand1PackageCmdSet" id="MyMenuGroup1" priority="0x0100">
-        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJNODE" />
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE" />
       </Group>
     </Groups>
 
@@ -25,7 +25,16 @@
         <Icon guid="guidImages" id="bmpPic1" />
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>Add new</ButtonText>
+          <ButtonText>Add new...</ButtonText>
+        </Strings>
+      </Button>
+      
+     <Button guid="guidCommand1PackageCmdSet" id="cmdExtendClass" priority="0x0100" type="Button">
+        <Parent guid="guidCommand1PackageCmdSet" id="MyMenuGroup1" />
+        <Icon guid="guidImages" id="bmpPic1" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Extend...</ButtonText>
         </Strings>
       </Button>
     
@@ -33,7 +42,6 @@
 
     <Bitmaps>
       <Bitmap guid="guidImages" href="Resources\ToolBox.Png" usedList="bmpPic1" />
-      <Bitmap guid="guidImages1" href="AddItemsFromProject\Resources\AddItemsToProject.png" usedList="bmpPic1" />
     </Bitmaps>
   </Commands>
 
@@ -43,7 +51,7 @@
     <GuidSymbol name="guidCommand1PackageCmdSet" value="{5ed27ab2-7007-4c3d-a535-88720e97b49f}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="cmdIdAddItemsToFolder" value="0x0100" />
-      
+      <IDSymbol name="cmdExtendClass" value="0x0200" />
       <IDSymbol name="MyMenuGroup1" value="0x1010" />
     </GuidSymbol>
 

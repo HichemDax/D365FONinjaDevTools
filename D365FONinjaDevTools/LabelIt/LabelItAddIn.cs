@@ -26,18 +26,13 @@ namespace D365FONinjaDevTools.LabelIt
         #region Member variables
 
         private const string addinName = "DesignerLabelsHelper";
-     
+
         #endregion
 
         #region Callbacks
-
-        /// <summary>
-        ///     Called when user clicks on the add-in menu
-        /// </summary>
-        /// <param name="e">The context of the VS tools and metadata</param>
+        
         public override void OnClick(AddinDesignerEventArgs e)
         {
-            
 
             try
             {
@@ -92,6 +87,7 @@ namespace D365FONinjaDevTools.LabelIt
                 {
                     var menu = e.SelectedElement as IBaseEnumValue;
                     menu.Label = menu.Name.Convert();
+                    
                 }
             }
             catch (Exception ex)
@@ -104,18 +100,11 @@ namespace D365FONinjaDevTools.LabelIt
 
         #region Properties
 
-        /// <summary>
-        ///     [DesignerMenuExportMetadata(AutomationNodeType = typeof(ITable))]
-        ///     Caption for the menu item. This is what users would see in the menu.
-        /// </summary>
         public override string Caption
         {
             get { return "Label it"; }
         }
 
-        /// <summary>
-        ///     Unique name of the add-in
-        /// </summary>
         public override string Name
         {
             get { return addinName; }

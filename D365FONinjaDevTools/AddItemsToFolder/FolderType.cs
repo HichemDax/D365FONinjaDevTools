@@ -38,5 +38,18 @@ namespace D365FONinjaDevTools.AddItemsToFolder
 
             return null;
         }
+
+
+        public static Tuple<Type, UtilElementType> FindTypeFromElement(string element)
+        {
+            foreach (var type in Types)
+            {
+                var pluralName = LocalUtils.ElementService.GetPluralName(type.Item1);
+                if (pluralName == element)
+                    return type;
+            }
+
+            return null;
+        }
     }
 }

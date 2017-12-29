@@ -6,8 +6,6 @@ namespace D365FONinjaDevTools.Parameters
 {
     public partial class Parameters : Form
     {
-        
-
         public Parameters()
         {
             InitializeComponent();
@@ -19,6 +17,10 @@ namespace D365FONinjaDevTools.Parameters
                 ProjectExtensionTB.DataBindings.Add(nameof(ProjectExtensionTB.Text), ProjectParameters.Instance,
                     nameof(ProjectParameters.Instance.Extension), false,
                     DataSourceUpdateMode.OnPropertyChanged);
+
+                DefaultLabelsFileNameTB.DataBindings.Add(nameof(DefaultLabelsFileNameTB.Text), ProjectParameters.Instance,
+                  nameof(ProjectParameters.Instance.DefaultLabelsFileName), false,
+                  DataSourceUpdateMode.OnPropertyChanged);
             }
             catch (Exception ee)
             {

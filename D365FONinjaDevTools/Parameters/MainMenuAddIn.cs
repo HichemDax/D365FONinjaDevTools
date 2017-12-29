@@ -45,7 +45,7 @@ namespace D365FONinjaDevTools.Parameters
         /// </summary>
         public override string Caption
         {
-            get { return "Parameters"; }
+            get { return "Ninja DevTools - Settings"; }
         }
 
         /// <summary>

@@ -77,7 +77,7 @@ namespace D365FONinjaDevTools.Kernel
             return null;
         }
 
-        public static string toCamelCase(string txt)
+        public static string ToCamelCase(this string txt)
         {
             return char.ToLowerInvariant(txt[0]) + txt.Substring(1);
         }
