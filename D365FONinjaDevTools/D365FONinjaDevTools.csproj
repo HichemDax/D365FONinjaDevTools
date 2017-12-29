@@ -114,8 +114,22 @@
   <ItemGroup>
     <Content Include="Resources\Class.png" />
     <Content Include="Resources\NewClass.png" />
-    <Content Include="Resources\ToolBox.png" />
-    <Content Include="Resources\ToolBoxThum.png" />
+    <Content Include="Resources\NinjaDevTools.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Resources\NinjaDevToolsBigThumb.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Resources\ToolBox.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Resources\ToolBoxThum.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <VSCTCompile Include="D365FoNinjaDevExtensionsPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
       <SubType>Designer</SubType>
