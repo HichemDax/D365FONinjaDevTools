@@ -74,6 +74,18 @@
   <ItemGroup>
     <Compile Include="AddItemsToFolder\AotElementCreate.cs" />
     <Compile Include="AddItemsToFolder\AddItemCommand.cs" />
+    <Compile Include="AddItemsToFolder\AotElementCreateEngin.cs" />
+    <Compile Include="AddItemsToFolder\ElementTypes\Class.cs" />
+    <Compile Include="AddItemsToFolder\ElementTypes\Form.cs" />
+    <Compile Include="AddItemsToFolder\ElementTypes\Menu.cs" />
+    <Compile Include="AddItemsToFolder\ElementTypes\MenuItemAction.cs" />
+    <Compile Include="AddItemsToFolder\ElementTypes\MenuItemOutput.cs" />
+    <Compile Include="AddItemsToFolder\ElementTypes\SecurityRole.cs" />
+    <Compile Include="AddItemsToFolder\ElementTypes\SsrsReport.cs" />
+    <Compile Include="AddItemsToFolder\ElementTypes\Table.cs" />
+    <Compile Include="Kernel\AxElementType.cs" />
+    <Compile Include="AddItemsToFolder\ElementTypes\ElementType.cs" />
+    <Compile Include="AddItemsToFolder\ElementTypes\Enum.cs" />
     <Compile Include="Kernel\ExtensionType.cs" />
     <Compile Include="AddItemsToFolder\FileNameDialog.xaml.cs">
       <DependentUpon>FileNameDialog.xaml</DependentUpon>
@@ -83,7 +95,11 @@
     <Compile Include="AddItemsToFolder\FolderType.cs" />
     <Compile Include="ExtendElement\ExtendElementsCommand.cs" />
     <Compile Include="Kernel\AddinsUtility.cs" />
+    <Compile Include="AddItemsToFolder\ElementTypes\MenuItemDisplay.cs" />
     <Compile Include="Kernel\NAxClass.cs" />
+    <Compile Include="AddItemsToFolder\ElementTypes\QuerySimple.cs" />
+    <Compile Include="AddItemsToFolder\ElementTypes\SecurityDuty.cs" />
+    <Compile Include="AddItemsToFolder\ElementTypes\SecurityPrivilege.cs" />
     <Compile Include="LabelIt\LabelItAddIn.cs" />
     <Compile Include="Kernel\LocalUtils.cs" />
     <Compile Include="Parameters\MainMenuAddIn.cs" />
@@ -134,7 +150,6 @@
       <ResourceName>Menus.ctmenu</ResourceName>
       <SubType>Designer</SubType>
     </VSCTCompile>
-    <Content Include="AddItemsFromProject\Resources\AddItemsToProject.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Parameters\Parameters.resx">

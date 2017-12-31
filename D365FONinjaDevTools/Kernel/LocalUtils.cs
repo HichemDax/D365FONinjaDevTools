@@ -1,6 +1,7 @@
 ﻿using System;
 using EnvDTE;
 using EnvDTE80;
+using Microsoft.Dynamics.AX.Metadata.MetaModel;
 using Microsoft.Dynamics.AX.Metadata.Service;
 using Microsoft.Dynamics.Framework.Tools;
 using Microsoft.Dynamics.Framework.Tools.Extensibility;
@@ -49,10 +50,7 @@ namespace D365FONinjaDevTools.Kernel
             {
                 Project project = projects.GetValue(0) as Project;
                 return project?.Object as VSProjectNode;
-
-                
             }
-            
             return null;
         }
 
@@ -67,14 +65,23 @@ namespace D365FONinjaDevTools.Kernel
             if (projects?.Length > 0)
             {
                 var project = projects.GetValue(0) as Project;
-
-
-
                 return project;
             }
-
-
             return null;
+        }
+
+
+        public static ModelSaveInfo GetModel()
+        {
+
+            var modelInfo = LocalUtils.GetActiveProjectNode().GetProjectsModelInfo();
+
+             var model = new ModelSaveInfo
+            {
+                Id = modelInfo.Id,
+                Layer = modelInfo.Layer
+            };
+            return model;
         }
 
         public static string ToCamelCase(this string txt)

@@ -11,6 +11,7 @@ using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
 using Microsoft.VisualStudio.Shell;
 using Exception = System.Exception;
 
+
 namespace D365FONinjaDevTools.AddItemsToFolder
 {
     /// <summary>
@@ -101,6 +102,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder
 
             if (LocalUtils.GetActiveProject().Kind != "{fc65038c-1b2f-41e1-a629-bed71d161fff}")
             {
+                
                 menuCommand.Visible = false;
                 return;
             }
@@ -112,7 +114,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder
 
             _folderName = LocalUtils.MyDte.SelectedItems.Item(1)?.ProjectItem?.Name;
 
-            var typeTuple = FolderType.FindTypeFromFolderName(_folderName);
+            var typeTuple = FolderNameToElementTypeConverter.FindTypeFromFolderName(_folderName);
 
             var canAdd = !string.IsNullOrEmpty(_folderName)
                 && typeTuple != null;
@@ -125,18 +127,14 @@ namespace D365FONinjaDevTools.AddItemsToFolder
 
         private void OnProjectContextMenuInvokeHandler(object sender, EventArgs e)
         {
-            var folderName = LocalUtils.MyDte.SelectedItems.Item(1)?.ProjectItem?.Name;
-
-            var typeTuple = FolderType.FindTypeFromFolderName(folderName);
-
-            var elementType = typeTuple.Item2;
-
+            var selectedItem = LocalUtils.MyDte.SelectedItems.Item(1)?.ProjectItem;
+            var engin = new AotElementCreateEngin();
             try
             {
                 var name = PromptForFileName();
                 if (string.IsNullOrEmpty(name))
                     return;
-                AotElementCreate.Create(elementType, name);
+                engin.AddAotElement(selectedItem, name);
             }
             catch (Exception ex)
             {
