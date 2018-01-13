@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using D365FONinjaDevTools.Kernel;
+using D365FONinjaDevTools.Parameters;
 using Microsoft.Dynamics.Framework.Tools.Extensibility;
 using Microsoft.Dynamics.Framework.Tools.MetaModel.Automation.BaseTypes;
 using Microsoft.Dynamics.Framework.Tools.MetaModel.Automation.Forms;
@@ -16,11 +17,21 @@ namespace D365FONinjaDevTools.LabelIt
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(ITable))]
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(IForm))]
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(IEdtBase))]
-    [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFormControl))]
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(Menu.IMenuItemDisplay))]
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(IBaseEnum))]
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(IBaseEnumValue))]
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(Menu.IMenu))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(IBaseField))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFieldContainer))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFieldDate))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFieldEnum))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFieldGroup))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFieldGuid))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFieldInt))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFieldReal))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFieldTime))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFieldUtcDateTime))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(BaseField))]
     public class LabelItAddin : DesignerMenuBase
     {
         #region Member variables
@@ -33,6 +44,8 @@ namespace D365FONinjaDevTools.LabelIt
         
         public override void OnClick(AddinDesignerEventArgs e)
         {
+            if (ProjectParameters.Instance == null)
+                ProjectParameters.Contruct();
 
             try
             {
@@ -47,12 +60,7 @@ namespace D365FONinjaDevTools.LabelIt
                     form.FormDesign.Caption = form.Name.Convert();
                 }
 
-                if (e.SelectedElement is IFormControl)
-                {
-                    var control = e.SelectedElement as IFormControl;
-                    control.FormDesign.Caption = control.Name.Convert();
-                }
-
+             
                 if (e.SelectedElement is IBaseEnum)
                 {
                     var @enum = e.SelectedElement as IBaseEnum;
@@ -63,6 +71,13 @@ namespace D365FONinjaDevTools.LabelIt
                     var edt = e.SelectedElement as IEdtBase;
                     edt.Label = edt.Name.Convert();
                 }
+
+                if (e.SelectedElement is IBaseField)
+                {
+                    var edt = e.SelectedElement as IBaseField;
+                    edt.Label = edt.Name.Convert();
+                }
+
 
 
                 if (e.SelectedElement is Menu.IMenuItemDisplay)

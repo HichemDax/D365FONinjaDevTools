@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D365FONinjaDevTools", "D365
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D365FONinjaDevTools_Setup", "D365FONinjaDevToolsSetup\D365FONinjaDevTools_Setup.csproj", "{40EC3306-FD6A-4973-A9F5-6D50867D3ACE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication1", "WpfApplication1\WpfApplication1.csproj", "{554AC5FB-4EC5-4188-AE38-6946BA6AC019}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{40EC3306-FD6A-4973-A9F5-6D50867D3ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40EC3306-FD6A-4973-A9F5-6D50867D3ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40EC3306-FD6A-4973-A9F5-6D50867D3ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{554AC5FB-4EC5-4188-AE38-6946BA6AC019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{554AC5FB-4EC5-4188-AE38-6946BA6AC019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{554AC5FB-4EC5-4188-AE38-6946BA6AC019}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{554AC5FB-4EC5-4188-AE38-6946BA6AC019}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

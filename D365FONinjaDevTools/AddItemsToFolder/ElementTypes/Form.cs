@@ -5,7 +5,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder.ElementTypes
 {
     public class Form : ElementType
     {
-        protected override Type GetElementType()
+        public override Type GetElementType()
         {
             return typeof(AxForm);
         }

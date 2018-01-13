@@ -9,7 +9,7 @@ using Exception = System.Exception;
 namespace D365FONinjaDevTools.Parameters
 {
     /// <summary>
-    ///     Singleton save all project parameters
+    /// Singleton saves all project parameters
     /// </summary>
     [XmlRoot("ProjectParameters")]
     public class ProjectParameters
@@ -33,6 +33,7 @@ namespace D365FONinjaDevTools.Parameters
 
         public static void Contruct()
         {
+          
             XmlDocument doc = new XmlDocument();
             var xsSubmit = new XmlSerializer(typeof(ProjectParameters));
             ParamFilePath =  Kernel.LocalUtils.GetActiveProjectNode().ProjectFolder + @"\NinjaDevAddinsParam.xml";
@@ -45,6 +46,7 @@ namespace D365FONinjaDevTools.Parameters
                 {
                     var projParams = (ProjectParameters) xsSubmit.Deserialize(reader);
                     Instance.Extension = projParams.Extension;
+                    Instance.DefaultLabelsFileName = projParams.DefaultLabelsFileName;
                 }
             }
         }

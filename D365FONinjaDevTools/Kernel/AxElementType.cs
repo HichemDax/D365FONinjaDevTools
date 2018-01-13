@@ -15,6 +15,7 @@
         SecurityDuty = 10,
         SecurityPolicy = 11,
         SecurityPrivilege = 12,
-        SecurityRole = 13
+        SecurityRole = 13,
+        EdtDate = 14
     }
 }

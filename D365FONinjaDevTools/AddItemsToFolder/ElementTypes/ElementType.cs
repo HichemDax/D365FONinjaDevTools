@@ -10,14 +10,14 @@ namespace D365FONinjaDevTools.AddItemsToFolder.ElementTypes
 {
     public abstract class ElementType
     {
-        protected IMetaModelService MetaService;
-        protected ModelSaveInfo Model;
-        protected VSProjectNode Project;
+        protected static IMetaModelService MetaService;
+        protected static ModelSaveInfo Model;
+        protected static VSProjectNode Project;
         protected Type AxElementType;
         protected string ElementName;
         protected VSProjectFolderNode FolderNode;
 
-        protected ElementType()
+        static ElementType()
         {
             MetaService = LocalUtils.MetaService;
             Model = LocalUtils.GetModel();
@@ -26,22 +26,15 @@ namespace D365FONinjaDevTools.AddItemsToFolder.ElementTypes
 
         public virtual bool IsMatch(ProjectItem projectItem)
         {
-            bool result = false;
             AxElementType = GetElementType();
             FolderNode = projectItem.Object as VSProjectFolderNode;
 
             if (FolderNode == null)
                 throw new Exception("The selected item is not a project folder");
 
-            var resultTuple = FolderNameToElementTypeConverter.FindTypeFromElement(FolderNode.Caption);
+            var isMatch = AotElementCreateEngin.CheckIsMatchWithType(FolderNode.Caption, AxElementType);
 
-            if (resultTuple == null)
-                throw new Exception("This folder is not supported");
-
-            if (resultTuple.Item1 == AxElementType)
-                result = true;
-
-            return result;
+            return isMatch;
         }
 
         public delegate IList<string> ElementNames();
@@ -77,7 +70,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder.ElementTypes
             AddAotElement();
         }
 
-        protected abstract Type GetElementType();
+        public abstract Type GetElementType();
         protected abstract void Create();
     }
 }

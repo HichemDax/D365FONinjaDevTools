@@ -8,6 +8,7 @@ using System;
 using System.ComponentModel.Design;
 using D365FONinjaDevTools.Kernel;
 using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
+using Microsoft.Dynamics.Framework.Tools.ProjectSystem.Wizards.WorkflowWizard;
 using Microsoft.VisualStudio.Shell;
 using Exception = System.Exception;
 
@@ -34,8 +35,6 @@ namespace D365FONinjaDevTools.AddItemsToFolder
         /// </summary>
         private readonly Package _package;
 
-        private string _folderName;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="AddItemCommand"/> class.
         /// Adds our command handlers for menu (commands must exist in the command table file)
@@ -44,13 +43,11 @@ namespace D365FONinjaDevTools.AddItemsToFolder
         private AddItemCommand(Package package)
         {
             if (package == null)
-            {
-                throw new ArgumentNullException("package");
-            }
+                throw new ArgumentNullException(nameof(package));
 
             this._package = package;
 
-            OleMenuCommandService commandService = this.ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
+            OleMenuCommandService commandService = CommandService();
             if (commandService != null)
             {
                 var menuCommandId = new CommandID(CommandSet, CommandId);
@@ -58,6 +55,11 @@ namespace D365FONinjaDevTools.AddItemsToFolder
                    OnProjectMenuBeforeQueryStatus, menuCommandId);
                 commandService.AddCommand(menuItem);
             }
+        }
+
+        private OleMenuCommandService CommandService()
+        {
+            return ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
         }
 
         /// <summary>
@@ -72,13 +74,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder
         /// <summary>
         /// Gets the service provider from the owner package.
         /// </summary>
-        private IServiceProvider ServiceProvider
-        {
-            get
-            {
-                return this._package;
-            }
-        }
+        private IServiceProvider ServiceProvider => _package;
 
         /// <summary>
         /// Initializes the singleton instance of the command.
@@ -92,49 +88,46 @@ namespace D365FONinjaDevTools.AddItemsToFolder
         
         private void OnProjectMenuBeforeQueryStatus(object sender, EventArgs e)
         {
-
             var menuCommand = sender as OleMenuCommand;
-
             if (menuCommand == null)
-            {
                 return;
-            }
+           
 
-            if (LocalUtils.GetActiveProject().Kind != "{fc65038c-1b2f-41e1-a629-bed71d161fff}")
+            var project = LocalUtils.GetActiveProject();
+            if (project == null)
             {
-                
                 menuCommand.Visible = false;
                 return;
             }
 
-            if (LocalUtils.MyDte?.SelectedItems.Count != 1)
+            if (project.Kind != GuidUtils.D365OperationsProject.ToString("B"))
             {
+                menuCommand.Visible = false;
                 return;
             }
+            if (LocalUtils.MyDte?.SelectedItems.Count != 1)
+                return;
 
-            _folderName = LocalUtils.MyDte.SelectedItems.Item(1)?.ProjectItem?.Name;
+            var projectItem = LocalUtils.MyDte.SelectedItems.Item(1).ProjectItem;
 
-            var typeTuple = FolderNameToElementTypeConverter.FindTypeFromFolderName(_folderName);
+            var canShow = AotElementCreateEngin.CheckIsMatch(projectItem);
 
-            var canAdd = !string.IsNullOrEmpty(_folderName)
-                && typeTuple != null;
-
-            menuCommand.Visible = canAdd;
-
-            menuCommand.Text = "Add new";
+            menuCommand.Visible = canShow;
 
         }
 
         private void OnProjectContextMenuInvokeHandler(object sender, EventArgs e)
         {
+            
+
             var selectedItem = LocalUtils.MyDte.SelectedItems.Item(1)?.ProjectItem;
-            var engin = new AotElementCreateEngin();
+           
             try
             {
                 var name = PromptForFileName();
                 if (string.IsNullOrEmpty(name))
                     return;
-                engin.AddAotElement(selectedItem, name);
+                AotElementCreateEngin.AddAotElement(selectedItem, name);
             }
             catch (Exception ex)
             {

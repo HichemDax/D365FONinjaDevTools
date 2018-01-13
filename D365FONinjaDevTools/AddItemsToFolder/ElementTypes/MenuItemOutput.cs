@@ -5,7 +5,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder.ElementTypes
 {
     public class MenuItemOutput : ElementType
     {
-        protected override Type GetElementType()
+        public override Type GetElementType()
         {
             return typeof(AxMenuItemOutput);
         }

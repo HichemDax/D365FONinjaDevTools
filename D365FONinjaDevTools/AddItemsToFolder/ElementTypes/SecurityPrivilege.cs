@@ -5,8 +5,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder.ElementTypes
 {
     public class SecurityPrivilege : ElementType
     {
-       
-        protected override Type GetElementType()
+        public override Type GetElementType()
         {
             return typeof(AxSecurityPrivilege);
         }

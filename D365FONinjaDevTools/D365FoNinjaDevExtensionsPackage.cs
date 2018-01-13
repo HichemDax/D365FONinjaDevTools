@@ -22,13 +22,15 @@ namespace D365FONinjaDevTools
     public sealed class D365FoNinjaDevExtensionsPackage : Package
     {
         public const string PackageGuidString = "a2d23409-8e73-41d4-a25f-c4ba334eb96b";
-    
 
         protected override void Initialize()
         {
             AddItemCommand.Initialize(this);
             ExtendElementsCommand.Initialize(this);
+            NewFolder1.Command1.Initialize(this);
             base.Initialize();
+            
+        
         }
       
     }

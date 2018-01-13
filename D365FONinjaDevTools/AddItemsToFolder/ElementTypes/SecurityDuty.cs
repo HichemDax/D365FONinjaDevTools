@@ -10,7 +10,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder.ElementTypes
             return MetaService.GetSecurityDutyNames;
         }
 
-        protected override Type GetElementType()
+        public override Type GetElementType()
         {
             return typeof(AxSecurityDuty);
         }

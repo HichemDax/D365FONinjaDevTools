@@ -5,7 +5,7 @@ using Microsoft.Dynamics.AX.Metadata.MetaModel;
 
 namespace D365FONinjaDevTools.AddItemsToFolder
 {
-    public class FolderNameToElementTypeConverter
+  /*  public class FolderNameToElementTypeConverter
     {
         private static readonly List<Tuple<Type, AxElementType>> Types = new List<Tuple<Type, AxElementType>>();
         static FolderNameToElementTypeConverter()
@@ -24,6 +24,13 @@ namespace D365FONinjaDevTools.AddItemsToFolder
             Types.Add(new Tuple<Type, AxElementType> (typeof(AxSecurityPolicy), AxElementType.SecurityPolicy) );
             Types.Add(new Tuple<Type, AxElementType> (typeof(AxSecurityPrivilege), AxElementType.SecurityPrivilege) );
             Types.Add(new Tuple<Type, AxElementType> (typeof(AxSecurityRole), AxElementType.SecurityRole) );
+            Types.Add(new Tuple<Type, AxElementType> (typeof(AxEdtDate), AxElementType.EdtDate) );
+            Types.Add(new Tuple<Type, AxElementType> (typeof(AxEdtDate), AxElementType.EdtDate) );
+            Types.Add(new Tuple<Type, AxElementType> (typeof(AxEdtDate), AxElementType.EdtDate) );
+            Types.Add(new Tuple<Type, AxElementType> (typeof(AxEdtDate), AxElementType.EdtDate) );
+            Types.Add(new Tuple<Type, AxElementType> (typeof(AxEdtDate), AxElementType.EdtDate) );
+            Types.Add(new Tuple<Type, AxElementType> (typeof(AxEdtDate), AxElementType.EdtDate) );
+            Types.Add(new Tuple<Type, AxElementType> (typeof(AxEdtDate), AxElementType.EdtDate) );
         }
 
         public static Tuple<Type, AxElementType> FindTypeFromFolderName( string folderName)
@@ -50,5 +57,5 @@ namespace D365FONinjaDevTools.AddItemsToFolder
 
             return null;
         }
-    }
+    }*/
 }

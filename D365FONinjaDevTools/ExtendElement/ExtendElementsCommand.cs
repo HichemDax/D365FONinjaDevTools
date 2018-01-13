@@ -38,8 +38,6 @@ namespace D365FONinjaDevTools.ExtendElement
         /// </summary>
         private readonly Package package;
 
-        private string _folderName;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtendElementsCommand"/> class.
         /// Adds our command handlers for menu (commands must exist in the command table file)
@@ -92,13 +90,17 @@ namespace D365FONinjaDevTools.ExtendElement
         private void OnProjectMenuBeforeQueryStatus(object sender, EventArgs e)
         {
             var menuCommand = sender as OleMenuCommand;
-
             if (menuCommand == null)
+                return;
+
+            var project = LocalUtils.GetActiveProject();
+            if (project == null)
             {
+                menuCommand.Visible = false;
                 return;
             }
 
-            if (LocalUtils.GetActiveProject().Kind != "{fc65038c-1b2f-41e1-a629-bed71d161fff}")
+            if (project.Kind != GuidUtils.D365OperationsProject.ToString("B"))
             {
                 menuCommand.Visible = false;
                 return;
@@ -109,6 +111,7 @@ namespace D365FONinjaDevTools.ExtendElement
                 menuCommand.Visible = false;
                 return;
             }
+
             if (!(LocalUtils.MyDte.SelectedItems.Item(1).ProjectItem is OAVSProjectFileItem))
             {
                 menuCommand.Visible = false;
@@ -116,13 +119,8 @@ namespace D365FONinjaDevTools.ExtendElement
             }
 
             OAVSProjectFileItem _class = LocalUtils.MyDte.SelectedItems.Item(1).ProjectItem as OAVSProjectFileItem;
-
-            //var typeTuple = FolderType.FindTypeFromFolderName(_folderName);
-
-
-            dynamic property = (_class.Object as VSProjectFileNode).NodeProperties;
-            menuCommand.Visible = property.ItemType == "Class Item";
-            menuCommand.Text = "Extend...";
+            dynamic property = (_class?.Object as VSProjectFileNode)?.NodeProperties;
+            menuCommand.Visible = property?.ItemType == "Class Item";
         }
 
         private void OnProjectContextMenuInvokeHandler(object sender, EventArgs e)
