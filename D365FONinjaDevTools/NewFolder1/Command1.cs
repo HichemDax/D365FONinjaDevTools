@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.Design;
+using D365FONinjaDevTools.Kernel;
 using Microsoft.VisualStudio.Shell;
 
 namespace D365FONinjaDevTools.NewFolder1
@@ -12,12 +13,12 @@ namespace D365FONinjaDevTools.NewFolder1
         /// <summary>
         /// Command ID.
         /// </summary>
-        public const int CommandId = 0x1025;
+        public const int CommandId = 1025;
 
         /// <summary>
         /// Command menu group (command set GUID).
         /// </summary>
-        public static readonly Guid CommandSet = new Guid("2db687bb-05d6-4c38-94db-a56751bcf34b");
+        public static readonly Guid CommandSet = new Guid("5ed27ab2-7007-4c3d-a535-88720e97b49f");
 
         /// <summary>
         /// VS Package that provides this command, not null.
@@ -39,9 +40,12 @@ namespace D365FONinjaDevTools.NewFolder1
             OleMenuCommandService commandService = this.ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
             if (commandService != null)
             {
+                
                 var menuCommandID = new CommandID(CommandSet, CommandId);
                 var menuItem = new MenuCommand(this.MenuItemCallback, menuCommandID);
                 commandService.AddCommand(menuItem);
+
+                menuItem.Visible = true;
             }
         }
 
@@ -77,7 +81,9 @@ namespace D365FONinjaDevTools.NewFolder1
         /// <param name="e">Event args.</param>
         private void MenuItemCallback(object sender, EventArgs e)
         {
-          
+            LocalUtils.MyDte.ExecuteCommand("Edit.SelectAll");
+            LocalUtils.MyDte.ExecuteCommand("Edit.Copy");
+            LocalUtils.MyDte.ExecuteCommand("Edit.Paste");
         }
     }
 }

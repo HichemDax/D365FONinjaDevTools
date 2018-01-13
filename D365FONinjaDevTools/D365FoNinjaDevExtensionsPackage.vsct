@@ -17,7 +17,7 @@
       <Group guid="guidCommand1PackageCmdSet" id="MyMenuGroup1" priority="0x0100">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE" />
       </Group>
-      <Group guid="guidD365FoNinjaDevExtensionsPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Group guid="guidCommand1PackageCmdSet" id="MyMenuGroup2" priority="0x0100">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
       </Group>
     </Groups>
@@ -40,11 +40,11 @@
           <ButtonText>Extend...</ButtonText>
         </Strings>
       </Button>
-      <Button guid="guidD365FoNinjaDevExtensionsPackageCmdSet" id="cmdidCommand1" priority="0x0100" type="Button">
-        <Parent guid="guidD365FoNinjaDevExtensionsPackageCmdSet" id="MyMenuGroup" />
-        <Icon guid="guidImages1" id="bmpPic1" />
+      
+      <Button guid="guidCommand1PackageCmdSet" id="cmdidCommand1" priority="0x0100" type="Button">
+        <Parent  guid="guidCommand1PackageCmdSet" id="MyMenuGroup2" />
         <Strings>
-          <ButtonText>Invoke Command1</ButtonText>
+          <ButtonText>Indent code</ButtonText>
         </Strings>
       </Button>
     </Buttons>
@@ -52,7 +52,7 @@
     <Bitmaps>
       <Bitmap guid="guidImages" href="Resources\ToolBox.png" usedList="bmpPic1" />
       <Bitmap guid="guidImages2" href="Resources\NewClass.png" />
-      <Bitmap guid="guidImages1" href="NewFolder1\Resources\Command1.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+      
     </Bitmaps>
   </Commands>
 
@@ -61,6 +61,13 @@
      editor="guidVSStd97"
      key1="VK_ADD" mod1="Control">
     </KeyBinding>
+
+    <KeyBinding guid="guidCommand1PackageCmdSet" id="cmdidCommand1"
+      editor="guidVSStd97"
+      key1="I" mod1="Alt"
+    >
+    </KeyBinding>
+    
   </KeyBindings>
 
   <Symbols>
@@ -71,6 +78,8 @@
       <IDSymbol name="cmdIdAddItemsToFolder" value="0x0100" />
       <IDSymbol name="cmdExtendClass" value="0x0200" />
       <IDSymbol name="MyMenuGroup1" value="0x1010" />
+      <IDSymbol name="MyMenuGroup2" value="300" />
+      <IDSymbol name="cmdidCommand1" value="1025" />
     </GuidSymbol>
 
     <GuidSymbol name="guidImages" value="{d7fde224-2a28-4562-9926-a6578a13cf0f}">
@@ -83,18 +92,7 @@
     </GuidSymbol>
     
   
-    <GuidSymbol value="{2db687bb-05d6-4c38-94db-a56751bcf34b}" name="guidD365FoNinjaDevExtensionsPackageCmdSet">
-      <IDSymbol value="4128" name="MyMenuGroup" />
-      <IDSymbol value="256" name="cmdidCommand1" />
-    </GuidSymbol>
   
-    <GuidSymbol value="{388896f3-6fd9-42cd-8bd6-565725e6cd75}" name="guidImages1">
-      <IDSymbol name="bmpPic1" value="1" />
-      <IDSymbol name="bmpPic2" value="2" />
-      <IDSymbol name="bmpPicSearch" value="3" />
-      <IDSymbol name="bmpPicX" value="4" />
-      <IDSymbol name="bmpPicArrows" value="5" />
-      <IDSymbol name="bmpPicStrikethrough" value="6" />
-    </GuidSymbol>
+   
   </Symbols>
 </CommandTable>
