@@ -43,7 +43,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
-    <IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>true</IncludeDebugSymbolsInVSIXContainer>
     <IncludeDebugSymbolsInLocalVSIXDeployment>true</IncludeDebugSymbolsInLocalVSIXDeployment>
     <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
     <CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>
@@ -101,7 +101,7 @@
     <Compile Include="AddItemsToFolder\ElementTypes\SecurityPrivilege.cs" />
     <Compile Include="LabelIt\LabelItAddIn.cs" />
     <Compile Include="Kernel\LocalUtils.cs" />
-    <Compile Include="NewFolder1\Command1.cs" />
+    <Compile Include="IndentCode\Command1.cs" />
     <Compile Include="Parameters\MainMenuAddIn.cs" />
     <Compile Include="Parameters\Parameters.cs">
       <SubType>Form</SubType>
@@ -129,7 +129,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NewFolder1\Resources\Command1.png" />
+    <Content Include="IndentCode\Resources\Command1.png" />
     <Content Include="Resources\Class.png">
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -182,28 +182,28 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Dynamics.AX.Metadata, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\D3FODevAddins\bin\Debug\Microsoft.Dynamics.AX.Metadata.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\nmjrsprb.nva\Microsoft.Dynamics.AX.Metadata.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Server.Core, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\NinjaDevAddins\bin\Debug\Microsoft.Dynamics.AX.Server.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\nmjrsprb.nva\Microsoft.Dynamics.AX.Server.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Xpp.Support, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\Microsoft.Dynamics.AX.Xpp.Support.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\nmjrsprb.nva\Microsoft.Dynamics.AX.Xpp.Support.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.LabelEditor">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\Microsoft.Dynamics.Framework.Tools.LabelEditor.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\nmjrsprb.nva\Microsoft.Dynamics.Framework.Tools.LabelEditor.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.MetaModel.Core">
       <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\Microsoft.Dynamics.Framework.Tools.MetaModel.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.ProjectSupport, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\D3FODevAddins\bin\Debug\Microsoft.Dynamics.Framework.Tools.ProjectSupport.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\nmjrsprb.nva\Microsoft.Dynamics.Framework.Tools.ProjectSupport.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.ProjectSystem">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\Microsoft.Dynamics.Framework.Tools.ProjectSystem.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\nmjrsprb.nva\Microsoft.Dynamics.Framework.Tools.ProjectSystem.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.Imaging, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.VisualStudio.Imaging.14.3.25407\lib\net45\Microsoft.VisualStudio.Imaging.dll</HintPath>
@@ -323,6 +323,11 @@
   </Target>
   -->
   <Target Name="AfterBuildAction" Condition="'$(BuildingInsideVisualStudio)'=='true'" AfterTargets="AfterBuild">
-    <CopyToExtensionFolder AddinDll="$(TargetPath)" />
+    <ItemGroup>
+      <OutputFiles Include="$(MSBuildProjectDirectory)\$(OutputPath)\**\*.*" />
+    </ItemGroup>
+    <Message Text="Copying @(OutputFiles)" Importance="high" />
+    <Copy SourceFiles="@(OutputFiles)" DestinationFiles="@(OutputFiles->'$(DynamicsVSToolsHintPath)\AddinExtensions\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Text="Copying finished" Importance="high" />
   </Target>
 </Project>

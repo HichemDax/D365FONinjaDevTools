@@ -22,6 +22,7 @@ namespace D365FONinjaDevTools.Kernel
 
         static LocalUtils()
         {
+            
             var metaModelProviders = ServiceLocator.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
             MetaService = metaModelProviders?.CurrentMetaModelService;
             ProjectService = ServiceLocator.GetService(typeof(IDynamicsProjectService)) as IDynamicsProjectService;
