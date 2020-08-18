@@ -80,7 +80,7 @@ namespace D365FONinjaDevTools.SetIndex
 
 
                 axTable.AddMethod(BuildMethod(field.Name, source));
-                var metaModelProviders = ServiceLocator.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
+                var metaModelProviders = CoreUtility.ServiceProvider.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
                 var metaModelService = metaModelProviders.CurrentMetaModelService;
                
                 var model = DesignMetaModelService.Instance.CurrentMetadataProvider.Tables.GetModelInfo(axTable.Name)

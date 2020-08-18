@@ -23,10 +23,10 @@ namespace D365FONinjaDevTools.Kernel
         static LocalUtils()
         {
             
-            var metaModelProviders = ServiceLocator.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
+            var metaModelProviders = CoreUtility.ServiceProvider.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
             MetaService = metaModelProviders?.CurrentMetaModelService;
-            ProjectService = ServiceLocator.GetService(typeof(IDynamicsProjectService)) as IDynamicsProjectService;
-            ElementService  = ServiceLocator.GetService(typeof(IDisplayElementProvider)) as IDisplayElementProvider;
+            ProjectService = CoreUtility.ServiceProvider.GetService(typeof(IDynamicsProjectService)) as IDynamicsProjectService;
+            ElementService  = CoreUtility.ServiceProvider.GetService(typeof(IDisplayElementProvider)) as IDisplayElementProvider;
             
         }
 
@@ -102,7 +102,7 @@ namespace D365FONinjaDevTools.Kernel
             Project = GetActiveProjectNode();
             ProjectParameters.Contruct();
 
-            MetaModelProviders = ServiceLocator.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
+            MetaModelProviders = CoreUtility.ServiceProvider.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
             if (MetaModelProviders != null)
                 MetaModelService = MetaModelProviders.CurrentMetaModelService;
 

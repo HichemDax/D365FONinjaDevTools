@@ -182,28 +182,211 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Dynamics.AX.Metadata, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\nmjrsprb.nva\Microsoft.Dynamics.AX.Metadata.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Core">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Extensions">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Management.Core">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Management.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Management.Delta">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Management.Delta.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Management.Diff">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Management.Diff.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Management.Merge">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Management.Merge.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Management.Merge.Strategies">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Management.Merge.Strategies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Management.Processing">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Management.Processing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Modeling">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Modeling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Navigation">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Patterns">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Patterns.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Search">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Storage">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.TypeSystem">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.TypeSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.TypeSystem.Provider">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.TypeSystem.Provider.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Upgrade.Common">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Upgrade.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Upgrade.Sequencing.CrossReference">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Upgrade.Sequencing.CrossReference.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Validation">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Visitors">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.Visitors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Security.ClientAuthentication">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Security.ClientAuthentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Security.Instrumentation">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Security.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Security.Management">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Security.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Security.Storage">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Security.Storage.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Server.Core, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\nmjrsprb.nva\Microsoft.Dynamics.AX.Server.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Server.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Services.DispatchService">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Services.DispatchService.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Servicing.Graph">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Servicing.Graph.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Servicing.SCDP">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Servicing.SCDP.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Servicing.SCDPBundling">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Servicing.SCDPBundling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Xpp.AxShared">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Xpp.AxShared.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Xpp.Redirect">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Xpp.Redirect.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Xpp.Support, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\nmjrsprb.nva\Microsoft.Dynamics.AX.Xpp.Support.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Xpp.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AXCreateDeployablePackageBase">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AXCreateDeployablePackageBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.BusinessPlatform.SharedTypes">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.BusinessPlatform.SharedTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Compiler.PageCompiler">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Compiler.PageCompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.FlightingService">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.FlightingService.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Hashing">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Hashing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Reports">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Reports.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.ApplicationExplorer">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.ApplicationExplorer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.AutomationObjects">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.AutomationObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.BrowserWrapper">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.BrowserWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.BuildTasks">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.BuildTasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.CompareTool">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.CompareTool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.Configuration">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.Core">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.CustomHelp">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.CustomHelp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.Designers">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.Designers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.Extensibility">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.Extensibility.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.FormControlExtension">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.FormControlExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.IconResources">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.IconResources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.Installer">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.Installer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.Integration">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.Integration.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.LabelEditor">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\nmjrsprb.nva\Microsoft.Dynamics.Framework.Tools.LabelEditor.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.LabelEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.Labels.Resolvers">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.Labels.Resolvers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.LanguageService">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.LanguageService.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.LanguageService.Automation">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.LanguageService.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.LanguageService.Parser">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.LanguageService.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.MetaModel">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.MetaModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.MetaModel.Core">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ymhmh4ah.wnn\Microsoft.Dynamics.Framework.Tools.MetaModel.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.MetaModel.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.MetaModel.ModelConverter">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.MetaModel.ModelConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.MetaModelStrings">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.MetaModelStrings.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.ProjectSupport, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\nmjrsprb.nva\Microsoft.Dynamics.Framework.Tools.ProjectSupport.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.ProjectSupport.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.ProjectSystem">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\nmjrsprb.nva\Microsoft.Dynamics.Framework.Tools.ProjectSystem.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.ProjectSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.Reports.Build">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.Reports.Build.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.Reports.DesignTime">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.Reports.DesignTime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.SemanticSearch">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.SemanticSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.SourceControl">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.SourceControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.StateMachine">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.Framework.Tools.StateMachine.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.Imaging, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.VisualStudio.Imaging.14.3.25407\lib\net45\Microsoft.VisualStudio.Imaging.dll</HintPath>

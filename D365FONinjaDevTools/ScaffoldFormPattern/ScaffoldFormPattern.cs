@@ -28,7 +28,7 @@ namespace D365FONinjaDevTools.ScaffoldFormPattern
         {
             try
             {
-                var metaModelProviders = ServiceLocator.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
+                var metaModelProviders = CoreUtility.ServiceProvider.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
                 var metaModelService = metaModelProviders.CurrentMetaModelService;
 
 

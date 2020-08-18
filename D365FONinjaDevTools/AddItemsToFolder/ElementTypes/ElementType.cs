@@ -17,7 +17,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder.ElementTypes
         protected string ElementName;
         protected VSProjectFolderNode FolderNode;
 
-        static ElementType()
+        public ElementType()
         {
             MetaService = LocalUtils.MetaService;
             Model = LocalUtils.GetModel();
