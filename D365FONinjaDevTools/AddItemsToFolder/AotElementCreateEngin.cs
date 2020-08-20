@@ -48,7 +48,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder
 
         public static bool CheckIsMatch(ProjectItem selectedItem)
         {
-            var folderNode = selectedItem.Object as VSProjectFolderNode;
+            var folderNode = selectedItem?.Object as VSProjectFolderNode;
 
             if (folderNode == null)
                 return false;

@@ -30,6 +30,7 @@ namespace D365FONinjaDevTools.ScaffoldFormPattern
             {
                 var metaModelProviders = CoreUtility.ServiceProvider.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
                 var metaModelService = metaModelProviders.CurrentMetaModelService;
+                
 
 
                 var form = (IForm) e.SelectedElement;

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using D365FONinjaDevTools.Parameters;
 using EnvDTE;
@@ -25,14 +27,17 @@ namespace D365FONinjaDevTools.Kernel
             
             var metaModelProviders = CoreUtility.ServiceProvider.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
             MetaService = metaModelProviders?.CurrentMetaModelService;
-            ProjectService = CoreUtility.ServiceProvider.GetService(typeof(IDynamicsProjectService)) as IDynamicsProjectService;
+            //ProjectService = CoreUtility.ServiceProvider.GetService(typeof(IDynamicsProjectService)) as IDynamicsProjectService;
             ElementService  = CoreUtility.ServiceProvider.GetService(typeof(IDisplayElementProvider)) as IDisplayElementProvider;
+
             
         }
 
+     
+
         public static IDisplayElementProvider ElementService { get; }
         public static IMetaModelService MetaService { get; }
-        public static IDynamicsProjectService ProjectService { get; }
+        //public static IDynamicsProjectService ProjectService { get; }
 
         // DTE interface represents Visual Studio object model and offers access to many related
         // objects and methods.
@@ -46,7 +51,7 @@ namespace D365FONinjaDevTools.Kernel
         ///     Gets the currently selected project in Visual Studio.
         /// </summary>
         /// <returns>The selected project node, if any; otherwise null.</returns>
-        public  static VSProjectNode GetActiveProjectNode()
+        public static VSProjectNode GetActiveProjectNode()
         {
             var projects = MyDte.ActiveSolutionProjects as Array;
 

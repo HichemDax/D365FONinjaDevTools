@@ -82,6 +82,8 @@
     <Compile Include="AddItemsToFolder\ElementTypes\SecurityRole.cs" />
     <Compile Include="AddItemsToFolder\ElementTypes\SsrsReport.cs" />
     <Compile Include="AddItemsToFolder\ElementTypes\Table.cs" />
+    <Compile Include="AddPackageReference\AddPackageReferenceCommand.cs" />
+    <Compile Include="AddPackageReference\AddPackageReferenceDialog.cs" />
     <Compile Include="Kernel\AxElementType.cs" />
     <Compile Include="AddItemsToFolder\ElementTypes\ElementType.cs" />
     <Compile Include="AddItemsToFolder\ElementTypes\Enum.cs" />
@@ -180,6 +182,30 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Dynamics.AX.Framework.Xlnt.TypeUniverse">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Framework.Xlnt.TypeUniverse.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Framework.Xlnt.UpdatableViewCodeGenerator">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Framework.Xlnt.UpdatableViewCodeGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Framework.Xlnt.XppCore">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Framework.Xlnt.XppCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Framework.Xlnt.XppCore.Visitors">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Framework.Xlnt.XppCore.Visitors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Framework.Xlnt.XppParser">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Framework.Xlnt.XppParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Framework.Xlnt.XppParser.Pass2">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Framework.Xlnt.XppParser.Pass2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Framework.Xlnt.XReference.Metadata">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Framework.Xlnt.XReference.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Framework.Xlnt.XReference.XReferenceProviders">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Framework.Xlnt.XReference.XReferenceProviders.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Metadata, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\vdsx14vj.tef\Microsoft.Dynamics.AX.Metadata.dll</HintPath>

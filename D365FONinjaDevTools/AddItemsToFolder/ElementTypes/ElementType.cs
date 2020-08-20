@@ -20,6 +20,7 @@ namespace D365FONinjaDevTools.AddItemsToFolder.ElementTypes
         public ElementType()
         {
             MetaService = LocalUtils.MetaService;
+            
             Model = LocalUtils.GetModel();
             Project = LocalUtils.GetActiveProjectNode();
         }

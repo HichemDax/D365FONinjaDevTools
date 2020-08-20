@@ -7,6 +7,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using D365FONinjaDevTools.AddItemsToFolder;
+using D365FONinjaDevTools.AddPackageReference;
 using D365FONinjaDevTools.ExtendElement;
 using Microsoft.VisualStudio.Shell;
 
@@ -26,6 +27,7 @@ namespace D365FONinjaDevTools
         protected override void Initialize()
         {
             AddItemCommand.Initialize(this);
+            AddPackageReferenceCommand.Initialize(this);
             ExtendElementsCommand.Initialize(this);
             NewFolder1.Command1.Initialize(this);
             base.Initialize();
