@@ -27,6 +27,7 @@ namespace D365FONinjaDevTools.Kernel
             
             var metaModelProviders = CoreUtility.ServiceProvider.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
             MetaService = metaModelProviders?.CurrentMetaModelService;
+            
             //ProjectService = CoreUtility.ServiceProvider.GetService(typeof(IDynamicsProjectService)) as IDynamicsProjectService;
             ElementService  = CoreUtility.ServiceProvider.GetService(typeof(IDisplayElementProvider)) as IDisplayElementProvider;
 

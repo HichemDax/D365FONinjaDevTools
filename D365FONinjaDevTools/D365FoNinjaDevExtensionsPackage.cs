@@ -28,6 +28,7 @@ namespace D365FONinjaDevTools
         {
             AddItemCommand.Initialize(this);
             AddPackageReferenceCommand.Initialize(this);
+            AddMissingPackageReferenceCommand.Initialize(this);
             ExtendElementsCommand.Initialize(this);
             NewFolder1.Command1.Initialize(this);
             base.Initialize();

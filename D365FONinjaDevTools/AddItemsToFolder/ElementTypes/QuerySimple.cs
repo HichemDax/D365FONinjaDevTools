@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Dynamics.AX.Metadata.Core.Collections;
 using Microsoft.Dynamics.AX.Metadata.MetaModel;
 
 namespace D365FONinjaDevTools.AddItemsToFolder.ElementTypes
@@ -17,7 +18,17 @@ namespace D365FONinjaDevTools.AddItemsToFolder.ElementTypes
 
         protected override void Create()
         {
-            var element = new AxQuerySimple {Name = ElementName};
+            var element = new AxQuerySimple
+            {
+                Name = ElementName, Methods = new KeyedObjectCollection<AxMethod>()
+                {
+                    new AxMethod()
+                    {
+                        Name = "classDeclaration",
+                        Source = "[Query]\r\npublic class " + ElementName + " extends QueryRun \r\n{\r\n}",
+                    }
+                }
+            };
             MetaService.CreateQuery(element, Model);
         }
     }

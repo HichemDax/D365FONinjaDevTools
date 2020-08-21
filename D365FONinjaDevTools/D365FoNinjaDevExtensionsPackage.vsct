@@ -23,6 +23,11 @@
       <Group guid="guidCommand1PackageCmdSet" id="MyMenuGroup3" priority="0x0100">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJNODE" />
       </Group>
+
+      <Group guid="guidCommand1PackageCmdSet" id="MyMenuGroup4" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ERRORLIST" />
+      </Group>
+
     </Groups>
 
 
@@ -61,6 +66,14 @@
         </Strings>
       </Button>
 
+      <Button guid="guidCommand1PackageCmdSet" id="cmdIdAddMissingPackageReference" priority="0x0100" type="Button">
+        <Parent guid="guidCommand1PackageCmdSet" id="MyMenuGroup4" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Add Missing Package...</ButtonText>
+        </Strings>
+      </Button>
+
     </Buttons>
 
    
@@ -95,8 +108,10 @@
       <IDSymbol name="MyMenuGroup1" value="0x1010" />
       <IDSymbol name="MyMenuGroup2" value="300" />
       <IDSymbol name="MyMenuGroup3" value="400" />
+      <IDSymbol name="MyMenuGroup4" value="500" />
       <IDSymbol name="cmdidCommand1" value="1025" />
       <IDSymbol name="cmdIdAddPackageReference" value="0X0300" />
+      <IDSymbol name="cmdIdAddMissingPackageReference" value="0X0400" />
     </GuidSymbol>
 
     <GuidSymbol name="guidImages" value="{d7fde224-2a28-4562-9926-a6578a13cf0f}">

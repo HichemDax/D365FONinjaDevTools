@@ -82,8 +82,8 @@
     <Compile Include="AddItemsToFolder\ElementTypes\SecurityRole.cs" />
     <Compile Include="AddItemsToFolder\ElementTypes\SsrsReport.cs" />
     <Compile Include="AddItemsToFolder\ElementTypes\Table.cs" />
-    <Compile Include="AddPackageReference\AddPackageReferenceCommand.cs" />
-    <Compile Include="AddPackageReference\AddPackageReferenceDialog.cs" />
+    <Compile Include="AddReferencePackages\AddPackageReferenceCommand.cs" />
+    <Compile Include="AddReferencePackages\AddMissingPackageReferenceCommand.cs" />
     <Compile Include="Kernel\AxElementType.cs" />
     <Compile Include="AddItemsToFolder\ElementTypes\ElementType.cs" />
     <Compile Include="AddItemsToFolder\ElementTypes\Enum.cs" />
@@ -101,6 +101,7 @@
     <Compile Include="AddItemsToFolder\ElementTypes\QuerySimple.cs" />
     <Compile Include="AddItemsToFolder\ElementTypes\SecurityDuty.cs" />
     <Compile Include="AddItemsToFolder\ElementTypes\SecurityPrivilege.cs" />
+    <Compile Include="Kernel\ReflectionUtils.cs" />
     <Compile Include="LabelIt\LabelItAddIn.cs" />
     <Compile Include="Kernel\LocalUtils.cs" />
     <Compile Include="IndentCode\Command1.cs" />
