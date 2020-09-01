@@ -8,6 +8,7 @@ namespace D365FONinjaDevToolsSetup
     class Program
     {
         private const string DllName = "D365FONinjaDevTools.dll";
+        private const string VsixName = "D365FONinjaDevTools.vsix";
         private const string AddinFolder = "AddinExtensions";
 
         static void Main(string[] args)
@@ -16,11 +17,9 @@ namespace D365FONinjaDevToolsSetup
             {
                 string sourcePath = Path.Combine(Environment.CurrentDirectory, DllName);
                 string targetPath = Path.Combine(FindExtensionFolder(), DllName);
-
                 File.Copy(sourcePath, targetPath, true);
-
+                System.Diagnostics.Process.Start(VsixName);
                 Console.WriteLine("Setup finished! Close and enjoy!");
-
             }
             catch (Exception ee)
             {

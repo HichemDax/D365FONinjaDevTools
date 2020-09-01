@@ -83,7 +83,7 @@
     <Compile Include="AddItemsToFolder\ElementTypes\SsrsReport.cs" />
     <Compile Include="AddItemsToFolder\ElementTypes\Table.cs" />
     <Compile Include="AddReferencePackages\AddPackageReferenceCommand.cs" />
-    <Compile Include="AddReferencePackages\AddMissingPackageReferenceCommand.cs" />
+    <Compile Include="BuildCurrentModel\BuildCurrentModelCommand.cs" />
     <Compile Include="Kernel\AxElementType.cs" />
     <Compile Include="AddItemsToFolder\ElementTypes\ElementType.cs" />
     <Compile Include="AddItemsToFolder\ElementTypes\Enum.cs" />
@@ -540,4 +540,8 @@
     <Copy SourceFiles="@(OutputFiles)" DestinationFiles="@(OutputFiles->'$(DynamicsVSToolsHintPath)\AddinExtensions\%(RecursiveDir)%(Filename)%(Extension)')" />
     <Message Text="Copying finished" Importance="high" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy  /y "$(TargetDir)D365FONinjaDevTools.vsix" "$(SolutionDir)D365FONinjaDevTools_Package"
+xcopy /y "$(TargetPath)" "$(SolutionDir)D365FONinjaDevTools_Package"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

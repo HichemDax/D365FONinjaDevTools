@@ -66,13 +66,21 @@
         </Strings>
       </Button>
 
-      <Button guid="guidCommand1PackageCmdSet" id="cmdIdAddMissingPackageReference" priority="0x0100" type="Button">
+      <Button guid="guidCommand1PackageCmdSet" id="cmdIdBuildCurrentModelCommand" priority="0x0100" type="Button">
+        <Parent guid="guidCommand1PackageCmdSet" id="MyMenuGroup3" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Build this model...</ButtonText>
+        </Strings>
+      </Button>
+
+      <!--<Button guid="guidCommand1PackageCmdSet" id="cmdIdAddMissingPackageReference" priority="0x0100" type="Button">
         <Parent guid="guidCommand1PackageCmdSet" id="MyMenuGroup4" />
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
           <ButtonText>Add Missing Package...</ButtonText>
         </Strings>
-      </Button>
+      </Button>-->
 
     </Buttons>
 
@@ -111,7 +119,7 @@
       <IDSymbol name="MyMenuGroup4" value="500" />
       <IDSymbol name="cmdidCommand1" value="1025" />
       <IDSymbol name="cmdIdAddPackageReference" value="0X0300" />
-      <IDSymbol name="cmdIdAddMissingPackageReference" value="0X0400" />
+      <IDSymbol name="cmdIdBuildCurrentModelCommand" value="0X0400" />
     </GuidSymbol>
 
     <GuidSymbol name="guidImages" value="{d7fde224-2a28-4562-9926-a6578a13cf0f}">
