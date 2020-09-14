@@ -41,7 +41,7 @@ namespace D365FONinjaDevTools.LabelIt
         #endregion
 
         #region Callbacks
-        
+
         public override void OnClick(AddinDesignerEventArgs e)
         {
             if (ProjectParameters.Instance == null)
@@ -52,8 +52,8 @@ namespace D365FONinjaDevTools.LabelIt
                 if (e.SelectedElement is ITable)
                 {
                     var table = e.SelectedElement as ITable;
-
-                    table.Label = table.Name.Convert();
+                    
+                        table.Label = table.Name.Convert(table.Label);
                 }
                 if (e.SelectedElement is IForm)
                 {
@@ -61,7 +61,7 @@ namespace D365FONinjaDevTools.LabelIt
                     form.FormDesign.Caption = form.Name.Convert();
                 }
 
-             
+
                 if (e.SelectedElement is IBaseEnum)
                 {
                     var @enum = e.SelectedElement as IBaseEnum;
@@ -103,7 +103,7 @@ namespace D365FONinjaDevTools.LabelIt
                 {
                     var menu = e.SelectedElement as IBaseEnumValue;
                     menu.Label = menu.Name.Convert();
-                    
+
                 }
             }
             catch (Exception ex)

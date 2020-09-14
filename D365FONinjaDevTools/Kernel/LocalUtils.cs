@@ -24,17 +24,17 @@ namespace D365FONinjaDevTools.Kernel
 
         static LocalUtils()
         {
-            
+
             var metaModelProviders = CoreUtility.ServiceProvider.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
             MetaService = metaModelProviders?.CurrentMetaModelService;
-            
-            //ProjectService = CoreUtility.ServiceProvider.GetService(typeof(IDynamicsProjectService)) as IDynamicsProjectService;
-            ElementService  = CoreUtility.ServiceProvider.GetService(typeof(IDisplayElementProvider)) as IDisplayElementProvider;
 
-            
+            //ProjectService = CoreUtility.ServiceProvider.GetService(typeof(IDynamicsProjectService)) as IDynamicsProjectService;
+            ElementService = CoreUtility.ServiceProvider.GetService(typeof(IDisplayElementProvider)) as IDisplayElementProvider;
+
+
         }
 
-     
+
 
         public static IDisplayElementProvider ElementService { get; }
         public static IMetaModelService MetaService { get; }
@@ -45,7 +45,7 @@ namespace D365FONinjaDevTools.Kernel
         // This is not anything specific to Dynamics AX.
         public static DTE2 MyDte => CoreUtility.ServiceProvider.GetService(typeof(DTE)) as DTE2;
 
-       
+
         public static VSApplicationContext Context => new VSApplicationContext(MyDte.DTE);
 
         /// <summary>
@@ -84,9 +84,9 @@ namespace D365FONinjaDevTools.Kernel
         public static ModelSaveInfo GetModel()
         {
 
-            var modelInfo = LocalUtils.GetActiveProjectNode().GetProjectsModelInfo();
+            var modelInfo = GetActiveProjectNode().GetProjectsModelInfo();
 
-             var model = new ModelSaveInfo
+            var model = new ModelSaveInfo
             {
                 Id = modelInfo.Id,
                 Layer = modelInfo.Layer
@@ -103,7 +103,7 @@ namespace D365FONinjaDevTools.Kernel
         public static IMetaModelProviders MetaModelProviders;
         public static IMetaModelService MetaModelService;
 
-        public static string Convert(this string name)
+        public static string Convert(this string name, string alternative = null)
         {
             Project = GetActiveProjectNode();
             ProjectParameters.Contruct();
@@ -117,15 +117,19 @@ namespace D365FONinjaDevTools.Kernel
 
             if (string.IsNullOrEmpty(defaultLablesFileName))
                 throw new System.Exception(
-                    "Label file name not specified in the Settings. Dynamics 365 > Addins > Ninja DevTools Settings");
+                    "Label file name not specified in the Settings: Dynamics 365 > Addins > Ninja DevTools Settings");
 
             var lableFile = MetaModelService.GetLabelFile(defaultLablesFileName);
             if (lableFile == null)
-                throw new Exception("File name not found");
-
+                throw new Exception("Labels file not found");
 
             var labelKey = name.Replace(extension, "");
-            var lableTxt = Regex.Replace(labelKey, "((?<=[a-z])[A-Z]|[A-Z](?=[a-z]))", " $1").Trim().ToLower().UppercaseFirst();
+            string lableTxt;
+
+            if (alternative != null && !alternative.StartsWith("@"))
+                lableTxt = alternative;
+            else
+                lableTxt = Regex.Replace(labelKey, "((?<=[a-z])[A-Z]|[A-Z](?=[a-z]))", " $1").Trim().ToLower().UppercaseFirst();
 
             LabelControllerFactory factory = new LabelControllerFactory();
             LabelEditorController labelEditorController = factory.GetOrCreateLabelController(lableFile, LocalUtils.Context);
