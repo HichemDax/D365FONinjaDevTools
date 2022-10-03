@@ -126,13 +126,13 @@ namespace D365FONinjaDevTools.Kernel
             var labelKey = name.Replace(extension, "");
             string lableTxt;
 
-            if (alternative != null && !alternative.StartsWith("@"))
+            if (!string.IsNullOrEmpty(alternative) && !alternative.StartsWith("@"))
                 lableTxt = alternative;
             else
                 lableTxt = Regex.Replace(labelKey, "((?<=[a-z])[A-Z]|[A-Z](?=[a-z]))", " $1").Trim().ToLower().UppercaseFirst();
 
             LabelControllerFactory factory = new LabelControllerFactory();
-            LabelEditorController labelEditorController = factory.GetOrCreateLabelController(lableFile, LocalUtils.Context);
+            LabelEditorController labelEditorController = factory.GetOrCreateLabelController(lableFile, Context);
 
             if (!labelEditorController.Exists(labelKey))
             {

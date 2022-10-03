@@ -53,7 +53,7 @@ namespace D365FONinjaDevTools.LabelIt
                 {
                     var table = e.SelectedElement as ITable;
                     
-                        table.Label = table.Name.Convert(table.Label);
+                    table.Label = table.Name.Convert(table.Label);
                 }
                 if (e.SelectedElement is IForm)
                 {

@@ -32,29 +32,15 @@ namespace D365FONinjaDevToolsSetup
 
         private static string FindExtensionFolder()
         {
-            using (var extensionsRegKey = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\VisualStudio\14.0\ExtensionManager\EnabledExtensions"))
+            String path;
+
+            path = Environment.GetEnvironmentVariable("DynamicsVSTools");
+
+            if (string.IsNullOrEmpty(path))
             {
-
-                string axToolsKeyName = "";
-                string path = "";
-
-                if (extensionsRegKey != null)
-                {
-                    axToolsKeyName = extensionsRegKey.GetValueNames().Where(name => name.StartsWith("DynamicsRainierVSTools")).FirstOrDefault();
-                }
-
-                if (axToolsKeyName != null)
-                {
-                    path = (string)extensionsRegKey.GetValue(axToolsKeyName);
-                }
-
-                if (String.IsNullOrEmpty(path))
-                {
-                    throw new ApplicationException("Could not find D365FO tools in Windows registry.");
-                }
-
-                return Path.Combine(path, AddinFolder);
+                throw new ApplicationException("Could not find D365FO tools in Windows registry.");
             }
+            return Path.Combine(path, AddinFolder);
         }
     }
 }
