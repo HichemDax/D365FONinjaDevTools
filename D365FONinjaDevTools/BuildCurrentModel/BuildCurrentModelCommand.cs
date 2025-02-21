@@ -10,16 +10,18 @@ using System.Threading.Tasks;
 using D365FONinjaDevTools.AddItemsToFolder;
 using D365FONinjaDevTools.Kernel;
 using Microsoft.Dynamics.AX.Metadata.Core.Messaging;
-using Microsoft.Dynamics.AX.Metadata.MetaModel;
+using Microsoft.Dynamics.AX.Metadata.Core.MetaModel;
 using Microsoft.Dynamics.Framework.Tools.Core;
+
 using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
-using Microsoft.Dynamics.Framework.Tools.ProjectSystem.ModelManagement;
+using Microsoft.Dynamics.Framework.Tools.ProjectSystem .ModelManagement;
 using Microsoft.Dynamics.Framework.Tools.ProjectSystem.Wizard;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
-using Microsoft.Dynamics.Framework.Tools.ProjectSystem.Build.ViewModel;
+using Microsoft.Dynamics.Framework.Tools.ProjectSystem .Build.ViewModel;
 using Microsoft.Dynamics.Framework.Tools.ProjectSystem.Build.View;
+using Microsoft.Dynamics.AX.Metadata.MetaModel;
 
 namespace D365FONinjaDevTools.AddPackageReference
 {

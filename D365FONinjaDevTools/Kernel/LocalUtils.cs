@@ -13,6 +13,7 @@ using Microsoft.Dynamics.Framework.Tools.Labels;
 using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
 using Microsoft.Dynamics.Framework.Tools.ProjectSupport;
 using Microsoft.Dynamics.Framework.Tools.ProjectSystem;
+using Microsoft.VisualStudio.Shell;
 
 namespace D365FONinjaDevTools.Kernel
 {
@@ -45,8 +46,8 @@ namespace D365FONinjaDevTools.Kernel
         // This is not anything specific to Dynamics AX.
         public static DTE2 MyDte => CoreUtility.ServiceProvider.GetService(typeof(DTE)) as DTE2;
 
-
-        public static VSApplicationContext Context => new VSApplicationContext(MyDte.DTE);
+       
+        public static VSApplicationContext Context => new VSApplicationContext(CoreUtility.ServiceProvider);
 
         /// <summary>
         ///     Gets the currently selected project in Visual Studio.
